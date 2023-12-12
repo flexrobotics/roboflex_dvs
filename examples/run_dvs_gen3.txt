@@ -1,0 +1,28 @@
+20:000D=24        // re-write bias
+WAIT=1
+20:3500=01        // bypass actdcs
+20:3600=00        // shist off
+20:3300=01        // bypass crop
+20:3043=01        // bypass esp
+
+20:3255=0C        // AY(8) R(4) GRST(2) GHLD(1)
+
+20:000F=05        // enable bias
+
+20:301E=01        // set PARA_OUT_EN_r
+20:3000=02        // set DVS_MODE to Active Mode
+WAIT=1
+20:3266=08        // boot sequence
+
+WAIT=1
+20:3238=01        // reset timestamp
+20:3238=00        // re-start timestamp
+
+
+20:390B=88        // set use_big_endian | use_timeout
+20:3900=09        // set fx3_enable
+
+// decrease senstivity
+20:001C=08
+20:001E=00
+
